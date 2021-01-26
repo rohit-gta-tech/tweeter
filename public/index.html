@@ -9,21 +9,99 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
+    <!-- Google fonts Bungee and Source Sans pro -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font swesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <div id="write">
+        <p><strong>Write</strong> a new tweet</p>
+        <i class="fas fa-angle-double-down"></i>
+      </div>
     </nav>
 
+
+    <!-- Header -->
+    <header id="page-header">
+      <div id="avatar">
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div id="user"></div>
+          <h2>Angela Merkel</h2>
+      </div>
+  </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <!-- Form for posting a tweet -->
+      <section class="new-tweet">
+        <h2>What are you humming about?</h2>
+        <form method='POST' action='/tweets'>
+          <textarea name="text" id="tweet-text" placeholder="Compose tweet here"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <!-- Markup of a posted tweet -->
+      <article class="posted-tweet">
+        <header>
+          <div class="pic-name">
+            <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1557216671.5403_tunyra_n.jpg">
+            <p>Rohit Sharma</p>
+          </div>
+          <p class="handle">@MyHandle</p>
+        </header>
+        <p class="tweet-body">The path of the righteous man is beset on all sides the the inequities of the evil and the tyranny of the evil man. Blessed is he who in the name of the Lord.</p>
+        <footer>
+          <p>10 days ago</p>
+          <div class="tweet-flags">
+            <button class="report-btn"><i class="fas fa-flag"></i></button>
+            <button class="retweet-btn"><i class="fas fa-retweet"></i></button>
+            <button class="like-btn"><i class="fas fa-heart"></i></button>
+          </div>
+        </footer>
+      </article>
+      <!-- Markup of 2nd posted tweet -->
+      <article class="posted-tweet">
+        <header>
+          <div class="pic-name">
+            <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1557216671.5403_tunyra_n.jpg">
+            <p>John McEnroe</p>
+          </div>
+          <p class="handle">@McEnroe</p>
+        </header>
+        <p class="tweet-body">We should reach out to people to try to go after the fans the way other sports do. Because we can't just depend on the fact that it is a great game.</p>
+        <footer>
+          <p>10 days ago</p>
+          <div class="tweet-flags">
+            <button class="report-btn"><i class="fas fa-flag"></i></button>
+            <button class="retweet-btn"><i class="fas fa-retweet"></i></button>
+            <button class="like-btn"><i class="fas fa-heart"></i></button>
+          </div>
+        </footer>
+      </article>
+    </main>
   </body>
 </html>
