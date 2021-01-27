@@ -26,13 +26,12 @@
     width: 1.5em;
     height: 1.5em;
     margin-right: 0.5em;
-    filter: grayscale(80%);
+    filter: blur(0.6px);
     border-radius: 50%;
 }
 
 .posted-tweet:hover header .pic-name img {
-    filter: grayscale(0%);
-    transition: 0.3s;
+    filter: blur(0);
 }
 
 
@@ -59,6 +58,7 @@
     width: 95%;
     margin: auto;
     font-weight: 600;
+    overflow-wrap: break-word;
     color:#545149BB;
     line-height: 1.3em;
     padding-bottom: 1em;
