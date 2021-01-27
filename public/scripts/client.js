@@ -61,6 +61,23 @@ $(document).ready(function() {
       </article>`
       return $tweet;
     }
-  //calling the tweet rendering function with fake data for now
+  // calling the tweet rendering function with fake data for now
   renderTweets(data);
+
+  // Form Submission using AJAX and JQuery
+  $('#submit-tweet').on("submit", function(event) {
+    event.preventDefault();
+    const tweet = $(this).serialize();
+    $(this).children("#tweet-text").val('');
+    $.ajax({
+        url: 'http://localhost:8080/tweets',
+        method: 'POST',
+        data: tweet
+    })
+    .done (() => console.log('Data posted through AJAX'))
+    .fail (() => console.log('Cant send posted tweet data to the server'))
+  });
+
+  //function to make a request to /tweets and receive the array of tweets as JSON.
+  
 });
