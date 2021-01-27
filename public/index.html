@@ -23,6 +23,8 @@
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -64,44 +66,11 @@
           </div>
         </form>
       </section>
-      <!-- Markup of a posted tweet -->
-      <article class="posted-tweet">
-        <header>
-          <div class="pic-name">
-            <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1557216671.5403_tunyra_n.jpg">
-            <p>Rohit Sharma</p>
-          </div>
-          <p class="handle">@MyHandle</p>
-        </header>
-        <p class="tweet-body">The path of the righteous man is beset on all sides the the inequities of the evil and the tyranny of the evil man. Blessed is he who in the name of the Lord.</p>
-        <footer>
-          <p>10 days ago</p>
-          <div class="tweet-flags">
-            <button class="report-btn"><i class="fas fa-flag"></i></button>
-            <button class="retweet-btn"><i class="fas fa-retweet"></i></button>
-            <button class="like-btn"><i class="fas fa-heart"></i></button>
-          </div>
-        </footer>
-      </article>
-      <!-- Markup of 2nd posted tweet -->
-      <article class="posted-tweet">
-        <header>
-          <div class="pic-name">
-            <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1557216671.5403_tunyra_n.jpg">
-            <p>John McEnroe</p>
-          </div>
-          <p class="handle">@McEnroe</p>
-        </header>
-        <p class="tweet-body">We should reach out to people to try to go after the fans the way other sports do. Because we can't just depend on the fact that it is a great game.</p>
-        <footer>
-          <p>10 days ago</p>
-          <div class="tweet-flags">
-            <button class="report-btn"><i class="fas fa-flag"></i></button>
-            <button class="retweet-btn"><i class="fas fa-retweet"></i></button>
-            <button class="like-btn"><i class="fas fa-heart"></i></button>
-          </div>
-        </footer>
-      </article>
+      
+      <!--Container for all posted tweets -->
+      <section id="tweets-container">
+      </section>
+      
     </main>
   </body>
 </html>

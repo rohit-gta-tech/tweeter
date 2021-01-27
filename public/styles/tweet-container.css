@@ -27,6 +27,7 @@
     height: 1.5em;
     margin-right: 0.5em;
     filter: grayscale(80%);
+    border-radius: 50%;
 }
 
 .posted-tweet:hover header .pic-name img {

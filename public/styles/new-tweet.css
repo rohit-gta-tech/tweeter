@@ -30,7 +30,8 @@
 
 .new-tweet button:hover {
     background-color: blue;
-    transition: 1s;
+    transition: 0.3s;
+    box-shadow: 2px 2px 2px #4056A1;
     cursor: pointer;
 }
 
