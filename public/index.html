@@ -36,7 +36,7 @@
     <nav>
       <span>tweeter</span>
       <div id="write">
-        <p><strong>Write</strong> a new tweet</p>
+        <button id="compose-btn"><p><strong>Write</strong> a new tweet</p></button>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
@@ -57,6 +57,11 @@
     <main class="container">
       <!-- Form for posting a tweet -->
       <section class="new-tweet">
+        <div id="limit-exceed">
+          <i class="fas fa-exclamation-triangle"></i>
+          &nbspToo Long! Please limit your tweet to 140 characters and respect the rules of this website!&nbsp
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
         <h2>What are you humming about?</h2>
         <form id="submit-tweet" method='POST' action='/tweets'>
           <textarea name="text" id="tweet-text" placeholder="Compose tweet here"></textarea>

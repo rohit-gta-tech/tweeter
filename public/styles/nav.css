@@ -25,6 +25,19 @@ nav #write {
     align-self: flex-start
 }
 
+nav #write button {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+nav #write button:hover {
+    color: #dba400;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 nav #write p {
     margin:0;
 }
@@ -38,3 +51,4 @@ nav #write i {
     from {top: 0px;}
     to {top: 5px;}
 }
+

@@ -63,10 +63,9 @@ $(document).ready(function() {
     //Form validation
     const tweetLength = $(this).children("#tweet-text").val().length;
     if (tweetLength > 140) {
-      alert('Tweet exceeds maximum characters allowed. Please edit!!');
-    } else if (tweetLength < 1) {
-      alert('Please post a tweet before submitting'); 
+      $(this).closest(".new-tweet").children("#limit-exceed").slideDown();
     } else {
+      $(this).closest(".new-tweet").children("#limit-exceed").slideUp(); 
       $(this).children("#tweet-text").val('');
       $(this).find('.counter').text(140);
       //AJAX Post call if form is validated
@@ -82,4 +81,14 @@ $(document).ready(function() {
         .fail(() => console.log('Cant send posted tweet data to the server'));
     }   
   });
+
+  //For toggling of new tweet section when clicking on write a new tweet button
+  $('#compose-btn').on("click", function(event) {
+    const $newTweet = $(this).closest("nav").nextAll(".container").children(".new-tweet");
+    if($newTweet.css("display") === "none") {
+       $newTweet.slideDown();
+    } else {
+       $newTweet.slideUp();
+    }
+  })
 });

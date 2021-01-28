@@ -1,3 +1,7 @@
+.new-tweet {
+    display: none;
+}
+
 .new-tweet h2 {
     margin-top: 0.8em;
     margin-bottom: 0.3em;
@@ -43,4 +47,15 @@
 }
 .new-tweet output.red {
     color:red;
+}
+
+.new-tweet #limit-exceed {
+    color:red;
+    font-weight: 600;
+    margin: auto;
+    max-width: 1000px;
+    border: 2px solid red;
+    padding: 0.2em 0;
+    margin-top: 0.5em;
+    display: none;
 }
