@@ -1,9 +1,10 @@
 .new-tweet {
     display: none;
+    margin-bottom: 1.5em;
 }
 
 .new-tweet h2 {
-    margin-top: 0.8em;
+    margin-top: 0;
     margin-bottom: 0.3em;
 }
 

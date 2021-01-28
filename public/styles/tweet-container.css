@@ -1,6 +1,6 @@
 .posted-tweet {
-    margin-top: 2em;
     border: 4px solid gray;
+    margin-bottom: 1.5em;
 }
 
 .posted-tweet:hover {

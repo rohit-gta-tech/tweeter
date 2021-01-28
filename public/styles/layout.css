@@ -27,7 +27,7 @@ body {
 
  main {
    width: 90%;
-   margin: auto;
+   margin: 2em auto 0;
  }
 
  body #toggle-btn {
@@ -50,4 +50,15 @@ body {
    background-color: #ff5500;
    cursor: pointer;
    transition: 0.3s;
+ }
+
+ @media only screen and (min-width: 1024px) {
+   body {
+     display:flex;
+   }
+   main {
+     margin-top: 200px;
+     width: 50%;
+     margin-right: 2.5em;
+   }
  }
