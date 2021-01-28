@@ -91,4 +91,22 @@ $(document).ready(function() {
        $newTweet.slideUp();
     }
   })
+
+  //Scroll up button display feature
+  $(window).scroll(function() {
+    if ($(this).scrollTop() !== 0) {
+        $(document.body).children("#toggle-btn").css("display", "block");
+        $(document.body).find('#write').css("display", "none");
+    } else {
+        $(document.body).children("#toggle-btn").css("display", "none");
+        $(document.body).find('#write').css("display", "flex");
+    }
+  }); 
+
+  // functionality when you click on the toggle up button
+  $('#toggle-btn').on("click", function(event) { 
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    const $newTweet = $(this).parent().children(".container").find(".new-tweet");
+    $newTweet.slideDown();
+  })
 });
