@@ -35,7 +35,7 @@ nav #write button {
 }
 
 nav #write button:hover {
-    color: #dba400;
+    color: red;
     cursor: pointer;
     transition: 0.3s;
 }
