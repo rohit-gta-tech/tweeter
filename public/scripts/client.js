@@ -1,11 +1,6 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(document).ready(function() {
 
-  //function to make a request to /tweets and receive the array of tweets as JSON.
+  //function to make a request to '/tweets' route, eceive the array of tweets as JSON and render the tweets
   const getPostedTweets = function() {
     $.ajax({
       url: 'http://localhost:8080/tweets',
@@ -18,7 +13,7 @@ $(document).ready(function() {
   //calling get Posted tweets function on document ready
   getPostedTweets();
     
-  //function for rendering an array of tweets in HTML format and appending it to the tweet container in index.html
+  //function for rendering an array of tweets and appending it to the tweet container in index.html
   const renderTweets  = function(tweetArray) {
     for (const $tweet of tweetArray) {
       const $newTweet = createTweetElement($tweet);
@@ -30,10 +25,10 @@ $(document).ready(function() {
   const createTweetElement = function(tweetData) {
     // Function for escaping cross site scripting
     const escape =  function(str) {
-        let div = document.createElement('div');
-        div.appendChild(document.createTextNode(str));
-        return div.innerHTML;
-    }
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
     const $tweet =
         `<article class="posted-tweet">
         <header>
@@ -60,14 +55,22 @@ $(document).ready(function() {
   $('#submit-tweet').on("submit", function(event) {
     event.preventDefault();
     const tweet = $(this).serialize();
+
     //Form validation
     const tweetLength = $(this).children("#tweet-text").val().length;
     if (tweetLength > 140) {
+      const errorMsg = 'Please limit your tweet to 140 characters and enjoy tweeting!!';
+      $(this).closest(".new-tweet").children("#limit-exceed").children("p").html(errorMsg);
+      $(this).closest(".new-tweet").children("#limit-exceed").slideDown();
+    } else if (tweetLength === 0) {
+      const errorMsg = 'It seems like you are submitting an empty tweet! Please write!!';
+      $(this).closest(".new-tweet").children("#limit-exceed").children("p").html(errorMsg);
       $(this).closest(".new-tweet").children("#limit-exceed").slideDown();
     } else {
-      $(this).closest(".new-tweet").children("#limit-exceed").slideUp(); 
+      $(this).closest(".new-tweet").children("#limit-exceed").slideUp();
       $(this).children("#tweet-text").val('');
       $(this).find('.counter').text(140);
+
       //AJAX Post call if form is validated
       $.ajax({
         url: 'http://localhost:8080/tweets',
@@ -75,38 +78,38 @@ $(document).ready(function() {
         data: tweet
       })
         .done(() => {
-            $('#tweets-container').empty();
-            getPostedTweets();
+          $('#tweets-container').empty();
+          getPostedTweets();
         })
         .fail(() => console.log('Cant send posted tweet data to the server'));
-    }   
+    }
   });
 
   //For toggling of new tweet section when clicking on write a new tweet button
   $('#compose-btn').on("click", function(event) {
     const $newTweet = $(this).closest("nav").nextAll(".container").children(".new-tweet");
-    if($newTweet.css("display") === "none") {
-       $newTweet.slideDown();
+    if ($newTweet.css("display") === "none") {
+      $newTweet.slideDown();
     } else {
-       $newTweet.slideUp();
+      $newTweet.slideUp();
     }
-  })
+  });
 
-  //Scroll up button display feature
+  //Scroll up to the top of the page button display feature
   $(window).scroll(function() {
     if ($(this).scrollTop() !== 0) {
-        $(document.body).children("#toggle-btn").css("display", "block");
-        $(document.body).find('#write').css("display", "none");
+      $(document.body).children("#toggle-btn").css("display", "block");
+      $(document.body).find('#write').css("display", "none");
     } else {
-        $(document.body).children("#toggle-btn").css("display", "none");
-        $(document.body).find('#write').css("display", "flex");
+      $(document.body).children("#toggle-btn").css("display", "none");
+      $(document.body).find('#write').css("display", "flex");
     }
-  }); 
+  });
 
   // functionality when you click on the toggle up button
-  $('#toggle-btn').on("click", function(event) { 
+  $('#toggle-btn').on("click", function(event) {
     $("html, body").animate({ scrollTop: 0 }, "slow");
     const $newTweet = $(this).parent().children(".container").find(".new-tweet");
     $newTweet.slideDown();
-  })
+  });
 });

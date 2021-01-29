@@ -16,7 +16,8 @@
     border-bottom: 4px solid gray;
     outline: none;
     padding-top: 0.5em;
-    background-color: #f4f1ec;
+    background-color: #e2ded7;
+    font-size: 20px;
 }
 
 .new-tweet div {
@@ -57,6 +58,8 @@
     max-width: 1000px;
     border: 2px solid red;
     padding: 0.2em 0;
-    margin-top: 0.5em;
     display: none;
+}
+.new-tweet #limit-exceed p {
+    display: inline;
 }
