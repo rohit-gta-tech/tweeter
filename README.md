@@ -5,10 +5,10 @@ This is a basic application created as part of learning exercise for HTML, CSS, 
 
 ## Final Product
 
-![Full page view](https://i.imgur.com/OXyhKdZ.png)
-!["New-tweet area enabled"](https://i.imgur.com/Hb2DsLz.png)
-!["Tab view"](https://i.imgur.com/SLCgcE9.png)
-!["Mobile view"](https://i.imgur.com/8MI4oCD.png)
+![Desktop view](https://raw.githubusercontent.com/rohit-gta-tech/tweeter/master/docs/Desktop%20view%20tweet%20scrolling.png)
+!["New-tweet area enabled"](https://github.com/rohit-gta-tech/tweeter/blob/master/docs/Desktop%20view%20new%20twweets.png?raw=true)
+!["Tab view"](https://github.com/rohit-gta-tech/tweeter/blob/master/docs/Tablet%20view.png?raw=true)
+!["Mobile view"](https://github.com/rohit-gta-tech/tweeter/blob/master/docs/Mobile%20view.png?raw=true)
 
 ## Dependencies
 
